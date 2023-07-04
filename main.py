@@ -1,8 +1,11 @@
 import pandas as pd
-import pandas_profiling as pf
+from pandas_profiling import ProfileReport
 
 base = pd.read_csv("Clean_Dataset.csv")
 
-report = pf.ProfileReport(base)
+print(base)
 
-report.to_file('perfil_reporte.html')
+profile = ProfileReport(base)
+profile
+
+profile.to_file("profile.html")
